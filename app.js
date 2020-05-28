@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 5000;
 var bodyParser = require("body-parser"),
 methodOverride = require("method-override"),
 expressSanitizer = require("express-sanitizer"),
@@ -112,6 +113,6 @@ app.delete("/blogs/:id", function(req, res){
    //redirect somewhere
 });
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("SERVER IS RUNNING!");
 })
