@@ -12,7 +12,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-var url = "mongodb+srv://RaviBlog:Ravi48566@cluster0-k3pf9.mongodb.net/blog?retryWrites=true&w=majority" || "mongodb://localhost:3000/restful_blog_app" ;
+var url = "mongodb+srv://RaviBlog:Ravi48566@cluster0-k3pf9.mongodb.net/blog?retryWrites=true&w=majority";
 mongoose.connect(url);
 
 
