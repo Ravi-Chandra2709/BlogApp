@@ -1,4 +1,4 @@
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 3000;
 var bodyParser = require("body-parser"),
 methodOverride = require("method-override"),
 expressSanitizer = require("express-sanitizer"),
@@ -11,7 +11,11 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/restful_blog_app");
+
+var url = "mongodb+srv://RaviBlog:Ravi48566@cluster0-k3pf9.mongodb.net/blog?retryWrites=true&w=majority" || "mongodb://localhost:3000/restful_blog_app" ;
+mongoose.connect(url);
+
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -113,6 +117,6 @@ app.delete("/blogs/:id", function(req, res){
    //redirect somewhere
 });
 
-app.listen(PORT, function(){
+app.listen(PORT,process.env.IP, function(){
     console.log("SERVER IS RUNNING!");
 })
